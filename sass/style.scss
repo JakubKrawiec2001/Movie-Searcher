@@ -1,0 +1,166 @@
+@use "./colors" as *;
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+}
+body {
+	position: relative;
+	height: 100vh;
+	background-color: $bg-light;
+}
+
+.wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 95%;
+	height: 98vh;
+	border-radius: 10px;
+	background-color: $bg;
+	.title {
+		font-size: 3rem;
+		padding: 20px 10px;
+		text-align: center;
+		color: $white;
+		.title-span {
+			padding: 5px;
+			color: $black;
+			background-color: $main-color;
+			border-radius: 10px;
+		}
+	}
+	.search-box {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		margin-top: 2em;
+		.movie-title {
+			padding: 0.3em;
+			width: 60%;
+			font-size: 1.4rem;
+			border: none;
+			border-bottom: 2px solid $main-color;
+			background-color: $bg;
+			color: $white;
+			outline: none;
+		}
+		.movie-title::placeholder {
+			opacity: 0.8;
+			color: $white;
+		}
+		.search-btn {
+			font-size: 1.5rem;
+			padding: 0.5em 1em;
+			border-radius: 10px;
+			border: transparent;
+			background-color: $main-color;
+			color: $black;
+			outline: none;
+			cursor: pointer;
+		}
+	}
+
+	.movie-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-top: 1.2em;
+		color: $white;
+		.warning-msg {
+			color: $white;
+		}
+		.movie-header {
+			display: flex;
+			align-items: center;
+			.movie-poster {
+				margin: 0.5em;
+				width: 50%;
+			}
+			.movie-header-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				align-items: center;
+				height: 200px;
+				margin-right: 0.5em;
+				.movie-name {
+					font-size: 2rem;
+				}
+				.movie-rate {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					padding: 0.5em;
+					font-size: 2rem;
+					.star {
+						width: 20%;
+						margin-right: 0.5em;
+					}
+				}
+				.movie-details {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					align-items: center;
+					width: 100%;
+					font-size: 1.2rem;
+					span {
+						padding: 0.1em;
+					}
+				}
+				.director {
+					font-size: 1.2rem;
+					padding: 0.3em 0;
+					span {
+						color: $main-color;
+					}
+				}
+				.box-office {
+					font-size: 1.2rem;
+					padding: 0 0.5em;
+					span {
+						color: $main-color;
+					}
+				}
+			}
+		}
+		.movie-type {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			font-size: 1.2rem;
+
+			span {
+				padding: 0.5em;
+				background-color: rgba(226, 182, 22, 0.4);
+				color: $black;
+				border-radius: 10px;
+				font-weight: bold;
+			}
+		}
+		.movie-plot {
+			font-size: 1rem;
+			padding: 0.5em;
+			h3 {
+				color: $main-color;
+			}
+		}
+		.movie-cast {
+			font-size: 1rem;
+			padding: 0.5em;
+			h3 {
+				color: $main-color;
+			}
+		}
+	}
+}
