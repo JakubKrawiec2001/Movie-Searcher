@@ -1,10 +1,23 @@
 const input = document.querySelector(".movie-title");
 const movieBox = document.querySelector(".movie-box");
 const searchBtn = document.querySelector(".search-btn");
+const loader = document.querySelector(".loading");
 
 let key = "a8667125";
 
+function displayLoading() {
+	loader.classList.add("display");
+	setTimeout(() => {
+		loader.classList.remove("display");
+	}, 3000);
+}
+
+function hideLoading() {
+	loader.classList.remove("display");
+}
+
 const getMovie = () => {
+	displayLoading();
 	let movieName = input.value;
 	let url = `http://www.omdbapi.com/?t=${movieName}&apikey=${key}`;
 
@@ -14,6 +27,7 @@ const getMovie = () => {
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {
+				hideLoading();
 				if (data.Response == "True") {
 					movieBox.innerHTML = `
                     <div class="movie-header">
@@ -32,7 +46,9 @@ const getMovie = () => {
 					<p class="box-office"><span>Box Office:</span> ${data.BoxOffice}</p>
 					</div>
 					</div>
-					<span class="movie-type"><span>${data.Genre.split(",").join(" / ")}</span></span>
+					<span class="movie-type"><span>${data.Genre.split(",").join(
+						" / "
+					)}</span></span>
 					<div class="movie-plot">
 					<h3>Plot:</h3>
 					<p>${data.Plot}</p>

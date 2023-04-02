@@ -155,7 +155,28 @@ body {
 .wrapper .movie-box .movie-cast h3 {
   color: #e2b616;
 }
+.wrapper .loading {
+  width: 2rem;
+  height: 2rem;
+  border: 5px solid #e2b616;
+  border-top: 6px solid #000;
+  border-radius: 100%;
+  margin: auto;
+  visibility: hidden;
+  animation: spin 1s infinite linear;
+}
+.wrapper .display {
+  visibility: visible;
+}
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media (min-width: 375px) {
   .wrapper {
     height: 650px;
@@ -164,10 +185,10 @@ body {
     font-size: 1.5rem;
   }
   .wrapper .movie-box .movie-plot {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .wrapper .movie-box .movie-cast {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 @media (min-width: 400px) {
