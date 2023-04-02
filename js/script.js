@@ -17,7 +17,7 @@ const getMovie = () => {
 				if (data.Response == "True") {
 					movieBox.innerHTML = `
                     <div class="movie-header">
-					<img src=${data.Poster} class="movie-poster">
+					<img src=${data.Poster} alt="Movie poster" class="movie-poster">
 					<div class="movie-header-text">
 					<h2 class="movie-name">${data.Title}</h2>
 					<p class="movie-rate"><img src="star.png" class="star">${
@@ -43,9 +43,17 @@ const getMovie = () => {
 					<h3>Actors:</h3>
 					<p>${data.Actors}</p>
 					</div>`;
+				} else {
+					movieBox.innerHTML = `<p class="warning-msg">The movie doesn't exist</p>`;
 				}
-			});
+			})
+			.catch((err) => console.error(err));
 	}
 };
 
 searchBtn.addEventListener("click", getMovie);
+input.addEventListener("keydown", (e) => {
+	if (e.key === "Enter") {
+		getMovie();
+	}
+});
