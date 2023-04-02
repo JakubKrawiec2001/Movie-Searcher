@@ -14,8 +14,7 @@ html {
 body {
   position: relative;
   height: 100vh;
-  background-color: #F4EBD0;
-  overflow: hidden;
+  background-color: #e2b616;
 }
 
 .wrapper {
@@ -23,8 +22,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 1em;
   width: 95%;
-  height: 98vh;
+  height: 550px;
   border-radius: 10px;
   background-color: #1d293c;
 }
@@ -134,17 +134,12 @@ body {
 }
 .wrapper .movie-box .movie-type {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  margin: 1em 0;
-  font-size: 1.2rem;
+  margin-bottom: 1em;
 }
 .wrapper .movie-box .movie-type span {
-  padding: 0.5em;
-  background-color: rgba(226, 182, 22, 0.4);
-  color: #000;
-  border-radius: 10px;
-  font-weight: bold;
+  opacity: 0.6;
+  font-size: 1.2rem;
 }
 .wrapper .movie-box .movie-plot {
   font-size: 1rem;
@@ -162,6 +157,9 @@ body {
 }
 
 @media (min-width: 375px) {
+  .wrapper {
+    height: 650px;
+  }
   .wrapper .search-box .search-btn {
     font-size: 1.5rem;
   }
@@ -172,7 +170,15 @@ body {
     font-size: 1.5rem;
   }
 }
+@media (min-width: 400px) {
+  .wrapper {
+    height: 700px;
+  }
+}
 @media (min-width: 768px) {
+  .wrapper {
+    height: 1000px;
+  }
   .wrapper .title {
     font-size: 4rem;
   }
@@ -217,8 +223,9 @@ body {
   .wrapper .movie-box .movie-header .movie-header-text .box-office {
     font-size: 3rem;
   }
-  .wrapper .movie-box .movie-type {
-    font-size: 2.6rem;
+  .wrapper .movie-box .movie-type span {
+    margin-left: 1em;
+    font-size: 2rem;
   }
   .wrapper .movie-box .movie-plot {
     font-size: 2.2rem;
@@ -228,6 +235,9 @@ body {
   }
 }
 @media (min-width: 992px) {
+  .wrapper {
+    height: 1300px;
+  }
   .wrapper .title {
     font-size: 5rem;
   }
@@ -253,6 +263,10 @@ body {
   .wrapper .movie-box .movie-header .movie-header-text .movie-rate .star {
     width: 8%;
   }
+  .wrapper .movie-box .movie-type span {
+    margin-left: 2em;
+    font-size: 2.5rem;
+  }
   .wrapper .movie-box .movie-plot {
     font-size: 2.5rem;
   }
@@ -261,6 +275,9 @@ body {
   }
 }
 @media (min-width: 1200px) {
+  .wrapper {
+    height: 900px;
+  }
   .wrapper .search-box {
     margin-top: 0;
     margin-bottom: 4em;
@@ -278,11 +295,9 @@ body {
   .wrapper .movie-box .movie-header .movie-header-text {
     height: 320px;
   }
-  .wrapper .movie-box .movie-type {
-    justify-content: center;
-  }
   .wrapper .movie-box .movie-type span {
-    margin: 0 2em;
+    font-size: 2rem;
+    margin-left: 7em;
   }
   .wrapper .movie-box .movie-plot {
     margin: 0 3em;
@@ -297,6 +312,12 @@ body {
   }
   .wrapper .movie-box .movie-header .movie-poster {
     width: 13%;
+  }
+  .wrapper .movie-box .movie-header .movie-header-text {
+    width: 600px;
+  }
+  .wrapper .movie-box .movie-type span {
+    margin-left: 23em;
   }
   .wrapper .movie-box .movie-cast {
     margin-bottom: 3em;

@@ -32,9 +32,7 @@ const getMovie = () => {
 					<p class="box-office"><span>Box Office:</span> ${data.BoxOffice}</p>
 					</div>
 					</div>
-					<span class="movie-type"><span>${data.Genre.split(",").join(
-						"</span><span>"
-					)}</span></span>
+					<span class="movie-type"><span>${data.Genre.split(",").join(" / ")}</span></span>
 					<div class="movie-plot">
 					<h3>Plot:</h3>
 					<p>${data.Plot}</p>

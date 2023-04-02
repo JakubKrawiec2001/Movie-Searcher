@@ -15,8 +15,7 @@ html {
 body {
 	position: relative;
 	height: 100vh;
-	background-color: $bg-light;
-	overflow: hidden;
+	background-color: $main-color;
 }
 
 .wrapper {
@@ -24,8 +23,9 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+	padding: 1em;
 	width: 95%;
-	height: 98vh;
+	height: 550px;
 	border-radius: 10px;
 	background-color: $bg;
 	.title {
@@ -119,14 +119,14 @@ body {
 				}
 				.director {
 					font-size: 1.2rem;
-					// padding: 0.3em 0;
+
 					span {
 						color: $main-color;
 					}
 				}
 				.box-office {
 					font-size: 1.2rem;
-					// padding: 0 0.5em;
+
 					span {
 						color: $main-color;
 					}
@@ -135,16 +135,11 @@ body {
 		}
 		.movie-type {
 			display: flex;
-			justify-content: space-around;
 			align-items: center;
-			margin: 1em 0;
-			font-size: 1.2rem;
+			margin-bottom: 1em;
 			span {
-				padding: 0.5em;
-				background-color: rgba(226, 182, 22, 0.4);
-				color: $black;
-				border-radius: 10px;
-				font-weight: bold;
+				opacity: 0.6;
+				font-size: 1.2rem;
 			}
 		}
 		.movie-plot {
@@ -167,6 +162,7 @@ body {
 // MEDIA
 @media (min-width: 375px) {
 	.wrapper {
+		height: 650px;
 		.search-box {
 			.search-btn {
 				font-size: 1.5rem;
@@ -183,8 +179,15 @@ body {
 	}
 }
 
+@media (min-width: 400px) {
+	.wrapper {
+		height: 700px;
+	}
+}
+
 @media (min-width: 768px) {
 	.wrapper {
+		height: 1000px;
 		.title {
 			font-size: 4rem;
 		}
@@ -232,7 +235,10 @@ body {
 				}
 			}
 			.movie-type {
-				font-size: 2.6rem;
+				span {
+					margin-left: 1em;
+					font-size: 2rem;
+				}
 			}
 			.movie-plot {
 				font-size: 2.2rem;
@@ -245,6 +251,7 @@ body {
 }
 @media (min-width: 992px) {
 	.wrapper {
+		height: 1300px;
 		.title {
 			font-size: 5rem;
 		}
@@ -272,7 +279,12 @@ body {
 					}
 				}
 			}
-
+			.movie-type {
+				span {
+					margin-left: 2em;
+					font-size: 2.5rem;
+				}
+			}
 			.movie-plot {
 				font-size: 2.5rem;
 			}
@@ -285,6 +297,7 @@ body {
 
 @media (min-width: 1200px) {
 	.wrapper {
+		height: 900px;
 		.search-box {
 			margin-top: 0;
 			margin-bottom: 4em;
@@ -302,9 +315,9 @@ body {
 				}
 			}
 			.movie-type {
-				justify-content: center;
 				span {
-					margin: 0 2em;
+					font-size: 2rem;
+					margin-left: 7em;
 				}
 			}
 			.movie-plot {
@@ -323,6 +336,14 @@ body {
 				margin-top: 4em;
 				.movie-poster {
 					width: 13%;
+				}
+				.movie-header-text {
+					width: 600px;
+				}
+			}
+			.movie-type {
+				span {
+					margin-left: 23em;
 				}
 			}
 			.movie-cast {
